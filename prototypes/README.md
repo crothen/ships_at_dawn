@@ -1,6 +1,6 @@
 # Ships at Dawn — Prototype Setup & Instructions
 
-> Universal guide for all prototypes. Niv: read this first when starting any new build.
+> **Internal docs for Niv.** Read this first when starting any new build.
 
 ## Project Structure
 
@@ -25,15 +25,16 @@ mkdir XXX-project-name    # e.g., 001-infinite-zoom
 cd XXX-project-name
 ```
 
-### 2. Choose your stack
+### 2. Set up React (default)
 
-**Quick Vue 3 setup:**
+**Default stack is React + TypeScript** (unless Chris says otherwise):
+
 ```bash
-npm create vue@latest . -- --typescript
+npm create vite@latest . -- --template react-ts
 npm install
 ```
 
-**Quick Vite + Vanilla:**
+**Alternative — Vanilla (if specified):**
 ```bash
 npm create vite@latest . -- --template vanilla-ts
 npm install
