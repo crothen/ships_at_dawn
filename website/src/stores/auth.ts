@@ -5,7 +5,7 @@ import { auth, googleProvider } from '@/firebase'
 
 // Admin UIDs - add authorized users here
 const ADMIN_UIDS: string[] = [
-  // Add Chris's Firebase UID here after first login
+  'GsxltEFkWhc1kfG0Jrde0YcYHLu1', // Chris
 ]
 
 export const useAuthStore = defineStore('auth', () => {

@@ -15,7 +15,7 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+const db = getFirestore(app, 'ships-at-dawn')
 
 const mockProjects = [
   {
@@ -53,7 +53,25 @@ const mockProjects = [
   },
 ]
 
+const adminUsers = [
+  {
+    uid: 'GsxltEFkWhc1kfG0Jrde0YcYHLu1',
+    email: 'chris@example.com',
+    role: 'admin',
+    createdAt: new Date(),
+  },
+]
+
 async function seed() {
+  console.log('Seeding users...')
+  
+  for (const user of adminUsers) {
+    const { uid, ...userData } = user
+    const { setDoc, doc } = await import('firebase/firestore')
+    await setDoc(doc(db, 'users', uid), userData)
+    console.log(`Added admin user: ${uid}`)
+  }
+  
   console.log('Seeding projects...')
   
   for (const project of mockProjects) {
