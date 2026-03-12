@@ -7,6 +7,7 @@ export interface Project {
   prototypeUrl?: string // Optional link to live prototype
   githubPath?: string // Path within repo, e.g., "prototypes/001-name"
   tags: string[]
+  readme?: string // Markdown documentation
   createdAt: Date
   published: boolean
 }

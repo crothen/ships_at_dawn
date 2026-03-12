@@ -19,6 +19,7 @@ const form = reactive({
   prototypeUrl: '',
   githubPath: '',
   tags: '',
+  readme: '',
   published: false,
 })
 
@@ -40,6 +41,7 @@ function resetForm() {
   form.prototypeUrl = ''
   form.githubPath = ''
   form.tags = ''
+  form.readme = ''
   form.published = false
   editingId.value = null
 }
@@ -52,6 +54,7 @@ function editProject(project: Project) {
   form.prototypeUrl = project.prototypeUrl || ''
   form.githubPath = project.githubPath || ''
   form.tags = project.tags.join(', ')
+  form.readme = project.readme || ''
   form.published = project.published
   editingId.value = project.id
   showForm.value = true
@@ -71,6 +74,7 @@ async function saveProject() {
         .split(',')
         .map((t) => t.trim())
         .filter(Boolean),
+      readme: form.readme || undefined,
       published: form.published,
       createdAt: new Date(),
     }
@@ -166,6 +170,11 @@ async function deleteProject(id: string) {
           <label>
             Tags (comma-separated)
             <input v-model="form.tags" type="text" placeholder="vue, firebase, ai" />
+          </label>
+
+          <label>
+            README (markdown)
+            <textarea v-model="form.readme" rows="12" placeholder="# Day XXX — Project Name&#10;&#10;Documentation for this prototype..."></textarea>
           </label>
 
           <label class="checkbox">
