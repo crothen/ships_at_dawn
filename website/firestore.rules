@@ -15,6 +15,24 @@ service cloud.firestore {
       allow read, write: if isAdmin();
     }
     
+    // Contact form inquiries: anyone may create, only admins may read
+    match /inquiries/{inquiryId} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'company', 'message', 'locale', 'createdAt'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 200
+                    && request.resource.data.email is string
+                    && request.resource.data.email.size() > 3
+                    && request.resource.data.email.size() <= 320
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 0
+                    && request.resource.data.message.size() <= 5000
+                    && request.resource.data.company is string
+                    && request.resource.data.company.size() <= 200
+                    && request.resource.data.locale in ['en', 'de'];
+      allow read, update, delete: if isAdmin();
+    }
+
     // Projects collection
     match /projects/{projectId} {
       // Anyone can read published projects
