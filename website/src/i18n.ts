@@ -105,6 +105,7 @@ const messages: Record<Locale, Record<string, string>> = {
     'contact.success': 'Thank you. Your inquiry has been received and I will get back to you within 24 hours.',
     'contact.error': 'Something went wrong. Please try again or reach out directly.',
     'contact.required': 'Please fill in all required fields.',
+    'contact.direct': 'Prefer email? Write me directly at',
 
     'footer.tagline': 'Rapid prototypes. Concept to MVP, deployed and shipped in one day.',
     'footer.rights': 'All rights reserved.',
@@ -201,6 +202,7 @@ const messages: Record<Locale, Record<string, string>> = {
     'contact.success': 'Danke. Deine Anfrage ist angekommen und ich melde mich innerhalb von 24 Stunden.',
     'contact.error': 'Etwas ist schiefgelaufen. Bitte versuche es erneut oder melde dich direkt.',
     'contact.required': 'Bitte fülle alle Pflichtfelder aus.',
+    'contact.direct': 'Lieber direkt per Mail? Schreib mir an',
 
     'footer.tagline': 'Rapid Prototypes. Vom Konzept zum MVP, deployed und live in einem Tag.',
     'footer.rights': 'Alle Rechte vorbehalten.',

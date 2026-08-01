@@ -48,6 +48,9 @@ const year = new Date().getFullYear()
     <footer class="footer">
       <div class="container footer-inner">
         <p class="footer-tagline">{{ t('footer.tagline') }}</p>
+        <p class="footer-email">
+          <a href="mailto:chris@ships-at-dawn.com">chris@ships-at-dawn.com</a>
+        </p>
         <p class="footer-meta">© {{ year }} Ships at Dawn. {{ t('footer.rights') }}</p>
       </div>
     </footer>
@@ -256,6 +259,20 @@ body {
 .footer-tagline {
   margin: 0 0 8px;
   color: var(--text-muted);
+}
+
+.footer-email {
+  margin: 0 0 8px;
+}
+
+.footer-email a {
+  color: var(--accent-soft);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-email a:hover {
+  text-decoration: underline;
 }
 
 .footer-meta {
