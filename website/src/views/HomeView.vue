@@ -7,6 +7,12 @@ const { t } = useI18n()
 const steps = [1, 2, 3, 4] as const
 const faqs = [1, 2, 3, 4] as const
 const deliverables = [1, 2, 3, 4, 5] as const
+const plans = [
+  { key: 'blitz', featured: false },
+  { key: 'day', featured: true },
+  { key: 'sprint', featured: false },
+] as const
+const planFeatures = [1, 2, 3] as const
 </script>
 
 <template>
@@ -103,8 +109,37 @@ const deliverables = [1, 2, 3, 4, 5] as const
       </div>
     </section>
 
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>{{ t('pricing.title') }}</h2>
+        <p class="section-subtitle">{{ t('pricing.subtitle') }}</p>
+        <div class="card-grid three pricing-grid">
+          <div v-for="plan in plans" :key="plan.key" class="card pricing-card" :class="{ featured: plan.featured }">
+            <span v-if="plan.featured" class="pricing-badge">{{ t('pricing.day.popular') }}</span>
+            <h3>{{ t(`pricing.${plan.key}.name`) }}</h3>
+            <div class="pricing-price">{{ t(`pricing.${plan.key}.price`) }}</div>
+            <div class="pricing-duration">{{ t(`pricing.${plan.key}.duration`) }}</div>
+            <p class="pricing-text">{{ t(`pricing.${plan.key}.text`) }}</p>
+            <ul class="pricing-features">
+              <li v-for="n in planFeatures" :key="n">
+                <span class="check small" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2.5 8.5l3.5 3.5 7.5-8" />
+                  </svg>
+                </span>
+                {{ t(`pricing.${plan.key}.f${n}`) }}
+              </li>
+            </ul>
+            <a href="#contact" class="btn" :class="plan.featured ? 'btn-primary' : 'btn-ghost'">{{ t('pricing.cta') }}</a>
+          </div>
+        </div>
+        <p class="pricing-note">{{ t('pricing.note') }}</p>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section id="faq" class="section">
+    <section id="faq" class="section section-alt">
       <div class="container narrow">
         <h2>{{ t('faq.title') }}</h2>
         <div class="faq-list">
@@ -361,6 +396,106 @@ const deliverables = [1, 2, 3, 4, 5] as const
   background: rgba(255, 107, 53, 0.12);
   color: var(--accent);
   margin-top: 1px;
+}
+
+/* Pricing */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: 0 8px 40px rgba(255, 107, 53, 0.12);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(120deg, var(--accent), #ff8f5c);
+  color: #16100c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 5px 14px;
+  white-space: nowrap;
+}
+
+.pricing-card h3 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 8px 0 12px;
+}
+
+.pricing-price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pricing-duration {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 4px 0 16px;
+}
+
+.pricing-text {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+  min-height: 72px;
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check.small {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+}
+
+.pricing-note {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 36px auto 0;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 14px 20px;
+}
+
+@media (max-width: 800px) {
+  .pricing-text {
+    min-height: 0;
+  }
 }
 
 /* FAQ */

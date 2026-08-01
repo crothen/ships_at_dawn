@@ -24,6 +24,7 @@ const year = new Date().getFullYear()
         <nav class="nav-links" v-if="isHome">
           <a href="#services">{{ t('nav.services') }}</a>
           <a href="#process">{{ t('nav.process') }}</a>
+          <a href="#pricing">{{ t('nav.pricing') }}</a>
           <a href="#faq">{{ t('nav.faq') }}</a>
         </nav>
         <div class="nav-actions">
