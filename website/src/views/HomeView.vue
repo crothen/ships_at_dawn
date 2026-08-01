@@ -122,6 +122,10 @@ const deliverables = [1, 2, 3, 4, 5] as const
         <h2>{{ t('contact.title') }}</h2>
         <p class="section-subtitle">{{ t('contact.subtitle') }}</p>
         <ContactForm />
+        <p class="contact-direct">
+          {{ t('contact.direct') }}
+          <a href="mailto:chris@ships-at-dawn.com">chris@ships-at-dawn.com</a>
+        </p>
       </div>
     </section>
   </div>
@@ -424,6 +428,22 @@ const deliverables = [1, 2, 3, 4, 5] as const
 
 .section-contact .container {
   position: relative;
+}
+
+.contact-direct {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 32px 0 0;
+}
+
+.contact-direct a {
+  color: var(--accent-soft);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-direct a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
