@@ -20,6 +20,7 @@ const messages: Record<Locale, Record<string, string>> = {
 
     'nav.services': 'What you get',
     'nav.process': 'How it works',
+    'nav.pricing': 'Pricing',
     'nav.faq': 'FAQ',
     'nav.contact': 'Contact',
 
@@ -78,6 +79,33 @@ const messages: Record<Locale, Record<string, string>> = {
     'audience.agencies.text':
       'Impress clients with a live proof of concept instead of another slide deck.',
 
+    'pricing.title': 'Pricing',
+    'pricing.subtitle': 'Fixed prices, agreed upfront. No surprises.',
+    'pricing.blitz.name': 'Blitz',
+    'pricing.blitz.price': 'CHF 500',
+    'pricing.blitz.duration': 'Half a day',
+    'pricing.blitz.text': 'For small projects: a landing page with real functionality, a single feature or a quick proof of an idea.',
+    'pricing.blitz.f1': 'Focused half day of building',
+    'pricing.blitz.f2': 'Live on a real URL',
+    'pricing.blitz.f3': 'Source code included',
+    'pricing.day.name': 'Prototype Day',
+    'pricing.day.price': 'CHF 1000',
+    'pricing.day.duration': 'One full day',
+    'pricing.day.text': 'The full experience: from concept to deployed MVP in a single day, ready for real users.',
+    'pricing.day.f1': 'Kickoff, build and launch in one day',
+    'pricing.day.f2': 'Working logic and real data',
+    'pricing.day.f3': 'Walkthrough and next steps',
+    'pricing.day.popular': 'Most popular',
+    'pricing.sprint.name': 'Three Day Sprint',
+    'pricing.sprint.price': 'CHF 2700',
+    'pricing.sprint.duration': 'Three days',
+    'pricing.sprint.text': 'For bigger ideas: user accounts, admin area, integrations, plus time to iterate on feedback.',
+    'pricing.sprint.f1': 'Larger scope and polish',
+    'pricing.sprint.f2': 'One iteration round included',
+    'pricing.sprint.f3': 'Deployment and handover included',
+    'pricing.note': 'Vereine, clubs and nonprofit organizations get a 20 percent discount.',
+    'pricing.cta': 'Get started',
+
     'faq.title': 'Frequently asked questions',
     'faq.q1': 'What can realistically be built in one day?',
     'faq.a1':
@@ -87,7 +115,7 @@ const messages: Record<Locale, Record<string, string>> = {
       'Your idea, 30 minutes for the kickoff call, and availability for quick questions during the day. Everything else is my job.',
     'faq.q3': 'What does it cost?',
     'faq.a3':
-      'A fixed price per prototype day, agreed upfront before we start. No surprises. Send a message and I will get back to you with details.',
+      'Fixed prices, listed in the pricing section above: CHF 500 for a Blitz half day, CHF 1000 for a full prototype day, CHF 2700 for a three day sprint. Vereine and nonprofits get 20 percent off.',
     'faq.q4': 'What happens after day one?',
     'faq.a4':
       'The prototype is yours, including the code. If it works, we can book iteration days to extend it, or you take it to your own team. No lock in.',
@@ -117,6 +145,7 @@ const messages: Record<Locale, Record<string, string>> = {
 
     'nav.services': 'Leistungen',
     'nav.process': 'Ablauf',
+    'nav.pricing': 'Preise',
     'nav.faq': 'FAQ',
     'nav.contact': 'Kontakt',
 
@@ -175,6 +204,33 @@ const messages: Record<Locale, Record<string, string>> = {
     'audience.agencies.text':
       'Begeistere Kunden mit einem Proof of Concept statt mit einer weiteren Präsentation.',
 
+    'pricing.title': 'Preise',
+    'pricing.subtitle': 'Festpreise, vereinbart bevor wir starten. Keine Überraschungen.',
+    'pricing.blitz.name': 'Blitz',
+    'pricing.blitz.price': 'CHF 500',
+    'pricing.blitz.duration': 'Ein halber Tag',
+    'pricing.blitz.text': 'Für kleine Projekte: eine Landingpage mit echter Funktionalität, ein einzelnes Feature oder ein schneller Beweis einer Idee.',
+    'pricing.blitz.f1': 'Fokussierter halber Tag',
+    'pricing.blitz.f2': 'Live auf einer echten URL',
+    'pricing.blitz.f3': 'Quellcode inklusive',
+    'pricing.day.name': 'Prototypentag',
+    'pricing.day.price': 'CHF 1000',
+    'pricing.day.duration': 'Ein ganzer Tag',
+    'pricing.day.text': 'Das volle Programm: vom Konzept zum deployten MVP an einem Tag, bereit für echte Nutzer.',
+    'pricing.day.f1': 'Kickoff, Bauen und Livegang an einem Tag',
+    'pricing.day.f2': 'Funktionierende Logik und echte Daten',
+    'pricing.day.f3': 'Einführung und nächste Schritte',
+    'pricing.day.popular': 'Beliebteste Wahl',
+    'pricing.sprint.name': 'Drei Tage Sprint',
+    'pricing.sprint.price': 'CHF 2700',
+    'pricing.sprint.duration': 'Drei Tage',
+    'pricing.sprint.text': 'Für grössere Ideen: Nutzerkonten, Adminbereich, Integrationen, plus Zeit für eine Feedbackrunde.',
+    'pricing.sprint.f1': 'Grösserer Umfang und Feinschliff',
+    'pricing.sprint.f2': 'Eine Iterationsrunde inklusive',
+    'pricing.sprint.f3': 'Deployment und Übergabe inklusive',
+    'pricing.note': 'Vereine und gemeinnützige Organisationen erhalten 20 Prozent Rabatt.',
+    'pricing.cta': 'Jetzt starten',
+
     'faq.title': 'Häufige Fragen',
     'faq.q1': 'Was lässt sich realistisch an einem Tag bauen?',
     'faq.a1':
@@ -184,7 +240,7 @@ const messages: Record<Locale, Record<string, string>> = {
       'Deine Idee, 30 Minuten für das Kickoff Gespräch und Erreichbarkeit für kurze Rückfragen während des Tages. Alles andere ist mein Job.',
     'faq.q3': 'Was kostet das?',
     'faq.a3':
-      'Ein Festpreis pro Prototypentag, vereinbart bevor wir starten. Keine Überraschungen. Schreib mir und ich melde mich mit den Details.',
+      'Festpreise, siehe Preisliste oben: CHF 500 für einen halben Blitz Tag, CHF 1000 für einen ganzen Prototypentag, CHF 2700 für einen Sprint über drei Tage. Vereine und gemeinnützige Organisationen erhalten 20 Prozent Rabatt.',
     'faq.q4': 'Was passiert nach dem ersten Tag?',
     'faq.a4':
       'Der Prototyp gehört dir, inklusive Code. Wenn es funktioniert, buchen wir Iterationstage zum Ausbau, oder dein eigenes Team übernimmt. Keine Bindung.',
